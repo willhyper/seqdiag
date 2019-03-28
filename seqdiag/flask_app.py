@@ -1,5 +1,5 @@
 from bokeh.embed import server_document
-from flask import render_template, Flask, request
+from flask import render_template, Flask, request,json
 
 from . import data_renderer, data_holder
 
@@ -17,7 +17,7 @@ def bkapp_page():
 
 @app.route('/', methods=['POST'])
 def post_data():
-    rj = request.get_json()
+    rj = request.get_json() 
     data_holder.post(**rj)
 
-    return "ack"
+    return json.dumps("ack")

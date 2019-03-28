@@ -26,7 +26,16 @@ def post(**kwargs):
     _data['t_start_ms'].append(t_start_ms)
     _data['t_end_ms'].append(t_start_ms+500)
 
-    _data['msg'].append(repr(kwargs))
+    _func = str(kwargs.get('func','?'))
+    _in = str(kwargs.get('in','()'))
+    _out = str(kwargs.get('out','()'))
+    
+    
+    _data['func'].append(_func)
+    _data['in'].append(_in)
+    _data['out'].append(_out)
+    
+    _data['msg'].append(str(kwargs))
     
 # example
-post(who='LogServer',msg='initialized')
+post(who='LogServer',func='initialize')

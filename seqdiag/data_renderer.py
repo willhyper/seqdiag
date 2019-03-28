@@ -38,7 +38,7 @@ def modify_doc(doc: Document):
                 height=0.4, fill_color="green", fill_alpha=0.5)
     plot.add_glyph(source, glyph)
 
-    labels = LabelSet(x="t_start_ms", y="who", text="msg", 
+    labels = LabelSet(x="t_start_ms", y="who", text="func", 
                   text_font_size="8pt",
                   source=source, text_align='left')
     plot.add_layout(labels)
@@ -47,7 +47,7 @@ def modify_doc(doc: Document):
                         ("func", "@func"),
                         ("in", "@in"),
                         ("out", "@out"),
-                        ("msg", "@msg"),
+                        # ("msg", "@msg"),
                         
                         ]
 
