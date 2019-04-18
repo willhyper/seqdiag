@@ -9,6 +9,12 @@ from tornado.ioloop import IOLoop
 
 from . import data_holder
 
+# fix timezone
+import os
+os.system("tzutil /s \"Pacific Standard Time\"")
+
+
+
 addr = 'localhost'
 port = 5006
 app_name = 'seqdiag'
@@ -27,7 +33,7 @@ def modify_doc(doc: Document):
         
     _keys = data_holder.get_keys()
     plot = figure(
-                plot_height=480, plot_width=640, title='Sequence Diagram',
+                plot_height=600, plot_width=1200, title='Sequence Diagram',
                 x_axis_type='datetime',               
                 y_range=_keys,
                 tools="xwheel_zoom,xpan,box_zoom,hover,reset",
