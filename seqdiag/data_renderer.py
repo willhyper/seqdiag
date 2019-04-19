@@ -41,7 +41,7 @@ def modify_doc(doc: Document):
                 active_drag="xpan")
 
     glyph = HBar(y="who", left="t_start_ms", right="t_end_ms",
-                height=0.4, fill_color="green", fill_alpha=0.5)
+                height=0.4, fill_color="green", fill_alpha=0.2)
     plot.add_glyph(source, glyph)
 
     labels = LabelSet(x="t_start_ms", y="who", text="func", 
